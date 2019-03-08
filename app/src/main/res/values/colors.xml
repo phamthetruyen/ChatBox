@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#56F158</color>
-    <color name="colorPrimaryDark">#FD8156</color>
+    <color name="colorPrimaryDark">#FF5722</color>
     <color name="colorAccent">#D81B60</color>
     <color name="btnSignUp">#39796b</color>
     <color name="btnSignActive">#a9d440</color>
+    <color name="whilee">#FFF</color>
+
 </resources>

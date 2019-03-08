@@ -19,8 +19,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class Splash extends AppCompatActivity {
-    EditText edtPhone,edtPassword;
+    EditText edtPhone, edtPassword;
     Button btnSingIn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,14 +54,14 @@ public class Splash extends AppCompatActivity {
                             user.setPhone(edtPhone.getText().toString());//set Phone
                             if (user.getPassword().equals(edtPassword.getText().toString())) {
                                 Toast.makeText(Splash.this, "OK", Toast.LENGTH_SHORT).show();
+
 //                                Intent homeIntent = new Intent(Splash.this,Home.class);
 //                                Common.currentUser = user;
 //                                startActivity(homeIntent);
 //                                finish();
 
                             } else Toast.makeText(Splash.this, "Fall", Toast.LENGTH_SHORT).show();
-                        }
-                        else {
+                        } else {
                             mDialog.dismiss();
                             Toast.makeText(Splash.this, "User do not exist", Toast.LENGTH_SHORT).show();
                         }

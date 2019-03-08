@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ChatBox</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_user">User</string>
+    <string name="title_listChat">List Chat</string>
+    <string name="title_profile">Profile</string>
+
+    <string name="some_error">Some Error Occurred!</string>
 </resources>
