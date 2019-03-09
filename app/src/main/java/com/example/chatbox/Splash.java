@@ -18,10 +18,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class Splash extends AppCompatActivity {
-    EditText edtPhone, edtPassword;
+public class Splash extends AppCompatActivity implements  IViewSignIn,View.OnClickListener{
+    EditText edtPhone,edtPassword;
     Button btnSingIn;
-
+    PresenterSignIn presenterSignIn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,48 +33,31 @@ public class Splash extends AppCompatActivity {
         // Khai báo Firebase
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference table_user = database.getReference("User");
+        //
+        presenterSignIn = new PresenterSignIn(this);
+        btnSingIn.setOnClickListener(this);
 
-        btnSingIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+    }
 
-                final ProgressDialog mDialog = new ProgressDialog(Splash.this);
-                mDialog.setMessage("Waiting!");
-                mDialog.show();
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.btnSignIn:
+                String username,password;
+                username = edtPhone.getText().toString();
+                password = edtPassword.getText().toString();
+                presenterSignIn.CheckSignIn(username,password);
+        }
+    }
 
-                table_user.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        //Kiểm tra xem user tồn tại k
-                        if (dataSnapshot.child(edtPhone.getText().toString()).exists()) {
+    @Override
+    public void SignInSuccessfully() {
+        Toast.makeText(this, "Ok", Toast.LENGTH_SHORT).show();
+    }
 
-                            mDialog.dismiss();
-                            // Lấy thông tin user
-                            User user = dataSnapshot.child(edtPhone.getText().toString()).getValue(User.class);
-                            user.setPhone(edtPhone.getText().toString());//set Phone
-                            if (user.getPassword().equals(edtPassword.getText().toString())) {
-                                Toast.makeText(Splash.this, "OK", Toast.LENGTH_SHORT).show();
+    @Override
+    public void SignInFall() {
+        Toast.makeText(this, "Fall", Toast.LENGTH_SHORT).show();
 
-//                                Intent homeIntent = new Intent(Splash.this,Home.class);
-//                                Common.currentUser = user;
-//                                startActivity(homeIntent);
-//                                finish();
-
-                            } else Toast.makeText(Splash.this, "Fall", Toast.LENGTH_SHORT).show();
-                        } else {
-                            mDialog.dismiss();
-                            Toast.makeText(Splash.this, "User do not exist", Toast.LENGTH_SHORT).show();
-                        }
-
-                    }
-
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-            }
-        });
     }
 }

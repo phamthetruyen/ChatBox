@@ -1,9 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUp">
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="#D8D6CF"
+    android:padding="10dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="Register"
+        android:gravity="center_horizontal"/>
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:id="@+id/edtPhone"
+        android:hint="Phone Number "
+        android:textSize="24sp"
+        android:inputType="phone"
+        app:met_baseColor="#222121"
+        app:met_floatingLabel="highlight"
+        app:met_maxCharacters="11"
+        app:met_primaryColor="#4CD7F0"
+        android:textStyle="bold"
+        app:met_singleLineEllipsis="true"
+        />
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:id="@+id/edtPass"
+        android:hint="Password "
+        android:textSize="24sp"
+        android:inputType="textPassword"
+        app:met_baseColor="#222121"
+        app:met_floatingLabel="highlight"
+        app:met_primaryColor="#4CD7F0"
+        android:textStyle="bold"
+        app:met_singleLineEllipsis="true"
+        />
+    <info.hoang8f.widget.FButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSignIn"
+        android:text="Sign Up"
+        android:layout_marginHorizontal="8dp"
+        android:layout_margin="8dp"
+        app:fButtonColor="@color/btnSignUp"
+        android:shadowColor="@android:color/black"
+        app:shadowEnabled="true"
+        app:shadowHeight="5dp"
+        app:cornerRadius="4dp"/>
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

@@ -61,7 +61,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:text="Đăng kí tài khoản"
+        android:text="Create Account"
         android:textSize="20sp"
         android:textColor="#FFFFFF"
         android:gravity="center"/>
