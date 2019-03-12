@@ -1,4 +1,4 @@
-package com.example.chatbox;
+package com.example.chatbox.login_logup.model;
 
 public class User {
     private  String Name;

@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".login_logup.view.SplashScreen"
     android:background="#FA6430">
-
     <ImageView
         android:layout_margin="10dp"
         android:layout_width="match_parent"

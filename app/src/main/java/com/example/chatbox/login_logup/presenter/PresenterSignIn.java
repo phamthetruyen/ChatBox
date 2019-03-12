@@ -1,10 +1,9 @@
-package com.example.chatbox;
+package com.example.chatbox.login_logup.presenter;
 
-import android.app.ProgressDialog;
 import android.support.annotation.NonNull;
-import android.view.View;
-import android.widget.Toast;
 
+import com.example.chatbox.login_logup.model.User;
+import com.example.chatbox.login_logup.view.IViewSignIn;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
