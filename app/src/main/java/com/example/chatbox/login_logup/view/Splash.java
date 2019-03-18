@@ -1,6 +1,7 @@
 package com.example.chatbox.login_logup.view;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.chatbox.Main2Activity;
 import com.example.chatbox.R;
 import com.example.chatbox.login_logup.presenter.PresenterSignIn;
 import com.example.chatbox.login_logup.presenter.PresenterSignUp;
@@ -86,6 +88,8 @@ public class Splash extends AppCompatActivity implements  IViewSignIn,View.OnCli
     @Override
     public void SignInSuccessfully() {
         Toast.makeText(this, "Ok", Toast.LENGTH_SHORT).show();
+        Intent activity2 = new Intent(Splash.this, Main2Activity.class);
+        startActivity(activity2);
     }
 
     @Override
